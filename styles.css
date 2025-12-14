@@ -1,0 +1,215 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+body{
+    color: white;
+    background-color: black;
+}
+section{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 70px;
+}
+section div{
+    position: relative;
+    width: 160px;
+    height: 200px;
+    margin: 15px;
+    border-radius: 14px;
+    border: 2px solid rgba(255,255,255,0.2);
+    cursor: pointer;
+    overflow: hidden;
+    transition: 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+section div::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: 0.6s;
+}
+section div::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transform: scale(1.2);
+    transition: 0.6s;
+}
+section div span{
+    position: absolute;
+    bottom: -40px;
+    width: 100%;
+    text-align: center;
+    font-size: 17px;
+    opacity: 0;
+    transition: 0.5s;
+}
+section div:hover{
+    box-shadow: 0 0 25px currentColor,
+                0 0 60px currentColor inset;
+    border-color: currentColor;
+}
+section div:hover::before{
+    opacity: 1;
+}
+section div:hover::after{
+    opacity: 1;
+    transform: scale(1);
+}
+section div:hover span{
+    bottom: 10px;
+    opacity: 1;
+}
+
+header{
+    text-align: center;
+   
+}
+ 
+#grean{
+ padding: 50px;
+ margin: 10px;
+ color: #00ff99;
+}
+#grean::after{
+    background-image: url(thorfinn-manga-coloring-v0-4wirvyf7tw1b1.jpg);
+}
+#grean::after + span, #grean span { content: ""; }
+#grean::after + span {}
+
+#grean span{ content:"Forest Energy"; }
+#grean:hover {
+    animation: neonFire 2s infinite ease-in-out;
+}
+
+#gray{
+ padding: 50px;
+ margin: 10px;
+ color: #aaa;
+}
+#gray::before{
+    background: radial-gradient(circle, rgba(200,200,200,0.1), rgba(200,200,200,0.6));
+}
+#gray::after{
+    background-image: url("https://images.unsplash.com/photo-1602526219043-bf90df7d1d6d");
+}
+#gray span{ content:"Metal Breath"; }
+#gray:hover {
+    animation: realFire 1.7s infinite ease-in-out;
+}
+#purple{
+ padding: 50px;
+ margin: 10px;
+ color: #b400ff;
+}
+#purple::before{
+    background: radial-gradient(circle, rgba(180,0,255,0.1), rgba(180,0,255,0.6));
+}
+#purple::after{
+    background-image: url("https://images.unsplash.com/photo-1500530855697-b586d89ba3ee");
+}
+#purple span{ content:"Dream Pulse"; }
+#purple:hover {
+    animation: plasma 2s infinite ease-in-out;
+}
+
+#red{
+ padding: 50px;
+ margin: 10px;
+ color: #ff003c;
+}
+#red::before{
+    background: radial-gradient(circle, rgba(255,0,60,0.1), rgba(255,0,60,0.6));
+}
+#red::after{
+    background-image: url("https://images.unsplash.com/photo-1526045478516-99145907023c");
+}
+#red span{ content:"Fire Power"; }
+#red:hover {
+    animation: realFire 1.6s infinite ease-in-out;
+}
+
+#black{
+  padding: 50px;
+  margin: 10px;
+  color: #ffffff;
+}
+#black::before{
+    background: radial-gradient(circle, rgba(255,255,255,0.1), rgba(255,255,255,0.6));
+}
+#black::after{
+    background-image: url("https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f");
+}
+#black span{ content:"Shadow"; }
+#black:hover {
+    animation: plasma 2s infinite ease-in-out;
+}
+
+#blue{
+ padding: 50px;
+ margin: 10px;
+  color: #009dff;
+}
+#blue:hover {
+    animation: neonFire 2s infinite ease-in-out;
+}
+#blue::before{
+    background: radial-gradient(circle, rgba(0,157,255,0.1), rgba(0,157,255,0.6));
+}
+#blue::after{
+    background-image: url("https://images.unsplash.com/photo-1501973801540-537f08ccae7b");
+}
+#blue span{ content:"Ice Pulse"; }
+@keyframes neonFire {
+    0% { box-shadow: 0 0 12px currentColor, 0 0 40px currentColor inset; }
+    50% { box-shadow: 0 0 20px currentColor, 0 0 65px currentColor inset; }
+    100% { box-shadow: 0 0 12px currentColor, 0 0 40px currentColor inset; }
+}
+
+
+@keyframes realFire {
+    0% { filter: hue-rotate(0deg) brightness(1.2); }
+    50% { filter: hue-rotate(-25deg) brightness(1.6); }
+    100% { filter: hue-rotate(0deg) brightness(1.2); }
+}
+
+@keyframes plasma {
+    0% { box-shadow: 0 0 15px currentColor, 0 0 30px currentColor inset; }
+    30% { box-shadow: 0 0 35px currentColor, 0 0 80px currentColor inset; }
+    60% { box-shadow: 0 0 15px currentColor, 0 0 30px currentColor inset; }
+    100% { box-shadow: 0 0 45px currentColor, 0 0 100px currentColor inset; }
+}
+@keyframes borderFire {
+  0% { background-position: 0 100%; opacity: 0.1; }
+  50% { opacity: 1; }
+  100% { background-position: 0 0%; opacity: 0.1; }
+}
+
+
+.cards-section {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh; 
+}
+
+#fire-canvas {
+  position: absolute;
+  inset: 0; 
+  width: 100%;
+  height: 140%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.cards-section > div {
+  position: relative;
+  z-index: 1; 
+}
